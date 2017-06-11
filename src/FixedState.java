@@ -13,6 +13,7 @@ public class FixedState extends MechanicalState {
     public FixedState(ActivityState historyActivity) {
         System.out.println("enter Fixed State");
         this.historyActivity = historyActivity;
+        this.activityState = historyActivity;
     }
 
     @Override

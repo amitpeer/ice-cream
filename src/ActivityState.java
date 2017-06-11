@@ -3,6 +3,7 @@
  */
 public abstract class ActivityState {
 
+
     public abstract void startChase(IceCreamTruckImpl iceCreamTruck,
                                     MechanicalState mechanicalState);
 

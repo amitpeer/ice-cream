@@ -34,6 +34,7 @@ public class BrokenState extends MechanicalState {
                          ShiftState shiftState) {
         System.out.println("exit Broken State");
         shiftState.setState(new FixedState(historyActivity));
+
         System.out.println("enter " + historyActivity.getMode());
         iceCreamTruck.setHasFixed(true);
         setState(historyActivity);
