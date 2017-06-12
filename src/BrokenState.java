@@ -3,9 +3,11 @@
  */
 public class BrokenState extends MechanicalState {
 
-    public BrokenState(ActivityState historyActivity) {
+    public BrokenState(ActivityState historyActivity, IceCreamTruckImpl iceCreamTruck) {
         System.out.println("enter Broken State");
         this.historyActivity = historyActivity;
+        iceCreamTruck.setSounds(false);
+        iceCreamTruck.setLights(false);
     }
 
     @Override
@@ -33,7 +35,7 @@ public class BrokenState extends MechanicalState {
     public void carFixed(IceCreamTruckImpl iceCreamTruck,
                          ShiftState shiftState) {
         System.out.println("exit Broken State");
-        shiftState.setState(new FixedState(historyActivity));
+        shiftState.setState(new FixedState(historyActivity,iceCreamTruck));
 
         System.out.println("enter " + historyActivity.getMode());
         iceCreamTruck.setHasFixed(true);

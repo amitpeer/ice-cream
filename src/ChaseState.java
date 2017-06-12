@@ -3,7 +3,9 @@
  */
 public class ChaseState extends ActivityState {
 
-    public ChaseState() {
+    public ChaseState(IceCreamTruckImpl iceCreamTruck) {
+        iceCreamTruck.setSounds(true);
+        IceCreamTruckImpl.increaseChaseCount();
         System.out.println("enter Chase State");
     }
 

@@ -9,8 +9,8 @@ public class OutShiftState extends ShiftState {
 
     @Override
     public void startShift(IceCreamTruckImpl iceCreamTruck) {
-        iceCreamTruck.setLights(true);
-        iceCreamTruck.setState(new InShiftState());
+       // iceCreamTruck.setLights(true);
+        iceCreamTruck.setState(new InShiftState(iceCreamTruck));
     }
 
     @Override

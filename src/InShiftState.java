@@ -3,9 +3,9 @@
  */
 public class InShiftState extends ShiftState {
 
-    public  InShiftState() {
+    public  InShiftState(IceCreamTruckImpl iceCreamTruck) {
         System.out.println("enter InShift state");
-        setState(new FixedState());
+        setState(new FixedState(iceCreamTruck ));
     }
 
     @Override
@@ -36,6 +36,7 @@ public class InShiftState extends ShiftState {
     @Override
     public void endShift(IceCreamTruckImpl iceCreamTruck) {
         System.out.println("exit InShift State");
+        iceCreamTruck.setLights(false);
         iceCreamTruck.setState(new OutShiftState());
     }
 

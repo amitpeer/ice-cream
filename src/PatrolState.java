@@ -10,9 +10,9 @@ public class PatrolState extends ActivityState {
     @Override
     public void startChase(IceCreamTruckImpl iceCreamTruck,
                            MechanicalState mechanicalState) {
-        mechanicalState.setState(new ChaseState());
-        IceCreamTruckImpl.increaseChaseCount();
-        iceCreamTruck.setLights(true);
+        mechanicalState.setState(new ChaseState( iceCreamTruck));
+      //  IceCreamTruckImpl.increaseChaseCount();
+       // iceCreamTruck.setSounds(true);
 
         new Thread()
         {

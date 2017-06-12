@@ -3,15 +3,17 @@
  */
 public class FixedState extends MechanicalState {
 
-    public FixedState() {
+    public FixedState(IceCreamTruckImpl iceCreamTruck) {
+        iceCreamTruck.setLights(true);
         System.out.println("enter Fixed State");
         if (historyActivity == null) {
             setState(new PatrolState());
         }
     }
 
-    public FixedState(ActivityState historyActivity) {
+    public FixedState(ActivityState historyActivity,IceCreamTruckImpl iceCreamTruck) {
         System.out.println("enter Fixed State");
+        iceCreamTruck.setLights(true);
         this.historyActivity = historyActivity;
         this.activityState = historyActivity;
     }
@@ -35,15 +37,15 @@ public class FixedState extends MechanicalState {
     public void carBroken(IceCreamTruckImpl iceCreamTruck,
                           ShiftState shiftState) {
         System.out.println("exit " + activityState.getMode());
-        iceCreamTruck.setSounds(false);
-        iceCreamTruck.setLights(false);
+     //   iceCreamTruck.setSounds(false);
+     //   iceCreamTruck.setLights(false);
         iceCreamTruck.setHasFixed(false);
         historyActivity = activityState;
-        shiftState.setState(new BrokenState(historyActivity));
+        shiftState.setState(new BrokenState(historyActivity,iceCreamTruck));
         new Thread() {
             public void run() {
                 try {
-                    Thread.sleep(9000);
+                    Thread.sleep(90000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
