@@ -6,10 +6,10 @@ public class IceCreamTruckImpl implements IceCreamTruck {
     private static int chaseSuccessCounter;
     private static int chaseCount;
     private ShiftState state;
-    private Boolean lights;
-    private Boolean sounds;
-    private Boolean hasFixed = true;
-    private Boolean hasKidsFound = false;
+    public Boolean lights;
+    public Boolean sounds;
+    public Boolean hasFixed = true;
+    public Boolean hasKidsFound = false;
 
     public IceCreamTruckImpl() {
         state = new OutShiftState();

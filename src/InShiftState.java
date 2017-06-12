@@ -42,6 +42,6 @@ public class InShiftState extends ShiftState {
 
     @Override
     public String getMode() {
-        return mechanicalState.getMode();
+        return "In Shift State: " + mechanicalState.getMode();
     }
 }

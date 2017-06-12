@@ -40,6 +40,6 @@ public class OutShiftState extends ShiftState {
 
     @Override
     public String getMode() {
-        return "OutShift State";
+        return "Out Shift State";
     }
 }

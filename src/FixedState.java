@@ -15,8 +15,8 @@ public class FixedState extends MechanicalState {
         System.out.println("enter Fixed State");
         iceCreamTruck.setLights(true);
         this.historyActivity = historyActivity;
-        this.activityState = historyActivity;
-        iceCreamTruck.setSounds(this.activityState.soundOn);
+        activityState = historyActivity;
+        iceCreamTruck.setSounds(activityState.soundOn);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class FixedState extends MechanicalState {
 
     @Override
     public String getMode() {
-        return activityState.getMode();
+        return "Fixed State: " + activityState.getMode();
     }
 
     @Override
