@@ -4,6 +4,7 @@
 public class PatrolState extends ActivityState {
 
     public PatrolState() {
+        this.soundOn = false;
         System.out.println("enter Patrol state");
     }
 
