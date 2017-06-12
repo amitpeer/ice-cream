@@ -23,6 +23,11 @@ public class IceCreamTruckImplTest {
         Thread.sleep(50);
         iceCreamTruck.carFixed();
         Assert.assertEquals("Patrol State", iceCreamTruck.getMode());
+        Assert.assertEquals("true", iceCreamTruck.hasFixed.toString());
+        Assert.assertEquals("true", iceCreamTruck.lights.toString());
+        Assert.assertEquals("false", iceCreamTruck.sounds.toString());
+
+
     }
 
     @Test
@@ -33,6 +38,10 @@ public class IceCreamTruckImplTest {
         iceCreamTruck.kidsFound();
         Assert.assertEquals("Patrol State", iceCreamTruck.getMode());
         Assert.assertEquals(1, iceCreamTruck.getNumberOfSuccessfulChases());
+
+        Assert.assertEquals("true", iceCreamTruck.hasFixed.toString());
+        Assert.assertEquals("true", iceCreamTruck.lights.toString());
+        Assert.assertEquals("false", iceCreamTruck.sounds.toString());
     }
 
     @Test
@@ -44,6 +53,10 @@ public class IceCreamTruckImplTest {
         Assert.assertEquals("Patrol State", iceCreamTruck.getMode());
         Assert.assertEquals(1, iceCreamTruck.getNumberOfChases());
         Assert.assertEquals(0, iceCreamTruck.getNumberOfSuccessfulChases());
+
+        Assert.assertEquals("true", iceCreamTruck.hasFixed.toString());
+        Assert.assertEquals("true", iceCreamTruck.lights.toString());
+        Assert.assertEquals("false", iceCreamTruck.sounds.toString());
     }
 
     @Test
@@ -55,6 +68,10 @@ public class IceCreamTruckImplTest {
         Assert.assertEquals("Broken State", iceCreamTruck.getMode());
         Assert.assertEquals(1, iceCreamTruck.getNumberOfChases());
         Assert.assertEquals(0, iceCreamTruck.getNumberOfSuccessfulChases());
+
+        Assert.assertEquals("false", iceCreamTruck.hasFixed.toString());
+        Assert.assertEquals("false", iceCreamTruck.lights.toString());
+        Assert.assertEquals("false", iceCreamTruck.sounds.toString());
     }
 
     @Test
@@ -68,6 +85,11 @@ public class IceCreamTruckImplTest {
         Assert.assertEquals("Broken State", iceCreamTruck.getMode());
         Assert.assertEquals(1, iceCreamTruck.getNumberOfChases());
         Assert.assertEquals(1, iceCreamTruck.getNumberOfSuccessfulChases());
+
+        Assert.assertEquals("false", iceCreamTruck.hasFixed.toString());
+        Assert.assertEquals("false", iceCreamTruck.lights.toString());
+        Assert.assertEquals("false", iceCreamTruck.sounds.toString());
+
     }
 
     @Test
@@ -79,5 +101,30 @@ public class IceCreamTruckImplTest {
         Assert.assertEquals("Chase State", iceCreamTruck.getMode());
         Assert.assertEquals(1, iceCreamTruck.getNumberOfChases());
         Assert.assertEquals(0, iceCreamTruck.getNumberOfSuccessfulChases());
+
+        Assert.assertEquals("true", iceCreamTruck.hasFixed.toString());
+        Assert.assertEquals("true", iceCreamTruck.lights.toString());
+        Assert.assertEquals("true", iceCreamTruck.sounds.toString());
     }
+
+    @Test
+    public void test7() throws InterruptedException {
+        iceCreamTruck.startShift();
+        iceCreamTruck.kidsGroupAlertFromCenter();
+        Thread.sleep(1000);
+        iceCreamTruck.carBroken();
+        Thread.sleep(10000);
+
+        Assert.assertEquals("OutShift State", iceCreamTruck.getMode());
+        Assert.assertEquals(1, iceCreamTruck.getNumberOfChases());
+        Assert.assertEquals(0, iceCreamTruck.getNumberOfSuccessfulChases());
+
+        Assert.assertEquals("false", iceCreamTruck.hasFixed.toString());
+        Assert.assertEquals("false", iceCreamTruck.lights.toString());
+        Assert.assertEquals("false", iceCreamTruck.sounds.toString());
+    }
+
+
+
+
 }

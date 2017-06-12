@@ -3,7 +3,7 @@
  */
 public abstract class ActivityState {
 
-
+    protected boolean soundOn;
     public abstract void startChase(IceCreamTruckImpl iceCreamTruck,
                                     MechanicalState mechanicalState);
 

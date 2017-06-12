@@ -16,6 +16,7 @@ public class FixedState extends MechanicalState {
         iceCreamTruck.setLights(true);
         this.historyActivity = historyActivity;
         this.activityState = historyActivity;
+        iceCreamTruck.setSounds(this.activityState.soundOn);
     }
 
     @Override
